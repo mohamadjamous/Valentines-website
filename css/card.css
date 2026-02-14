@@ -1,0 +1,162 @@
+@font-face {
+    font-family: "web-font";
+    src: url(./meybi/font.ttf);
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fae1dd;
+}
+.container{
+    position: relative;
+}
+.container .valentines{
+    position: relative;
+    cursor: pointer;
+    top: 20px;
+    animation: up 2s linear infinite;
+}
+.container .valentines .envelope{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    background-color: #f08080;
+}
+.container .valentines .envelope::before{
+    content: "";
+    position: absolute;
+    width: 212px;
+    height: 212px;
+    background-color: #f08080;
+    transform: rotate(45deg);
+    top: -105px;
+    left: 44px;
+    border-radius: 30px 0 0 0;
+}
+.front{
+    position: absolute;
+    border-right: 180px solid #f4978e;
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    left: 120px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    z-index: 10;
+}
+.front::before{
+    content: "";
+    position: absolute;
+    border-left: 300px solid #f4978e;
+    border-top: 195px solid transparent;
+    left: -120px;
+    top: -95px;
+}
+.card{
+    position: relative;
+    width: 250px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 1s;
+}
+.card::before{
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid #003049;
+    border-style: dashed;
+}
+.valentines:hover .card{
+    transform: translateY(-100px);
+}
+.card .text{
+    font-family:'web-font';
+    font-size: 28px;
+    text-align: center;
+    line-height: 28px;
+    color: #003049;
+}
+.card .heart{
+    position: relative;
+    height: 26px;
+    width: 26px;
+    bottom: -16px;
+    background-color: #f20044;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 90px #f20044;
+    animation: heart 0.6s linear infinite;
+}
+.card .heart::before{
+    content:"";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -50%;
+    background-color: #f20044;
+    border-radius: 50px;
+    box-shadow: -10px -10px 90px #f20044;
+
+}
+.card .heart::after{
+    content:"";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: -50%;
+    background-color: #f20044;
+    border-radius: 50px;
+    box-shadow: 10px 10px 90px #f20044;
+}
+@keyframes heart{
+    0%{
+        transform: rotate(-45deg) scale(1.07);
+    }
+    80%{
+        transform: rotate(-45deg) scale(1.0);
+    }
+    100%{
+        transform: rotate(-45deg) scale(0.8);
+    }
+}
+@keyframes up {
+       0%,100%{
+           transform: translateY(0);
+       } 
+       50%{
+           transform: translateY(-30px);
+       }
+}
+.valentines::before{
+    content: "";
+    position: absolute;
+    width: 330px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgba(0 , 0 , 0 ,0.3);
+    top: 265px;
+    left: -15px;
+    animation: scale 2s linear infinite;
+}
+@keyframes scale{
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.85);
+    }
+}
